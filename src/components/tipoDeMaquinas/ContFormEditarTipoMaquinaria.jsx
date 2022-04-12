@@ -10,6 +10,7 @@ export default function ContFormEditarTipoMaquinaria() {
   return (
     <div>
         <FormNuevoTipoMaquina
+          tituloNombre = "Editar tipo de maquinaria"
           nombre = {nombre}
           setNombre = {setNombre}
           descripcion = {descripcion}

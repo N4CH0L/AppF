@@ -63,7 +63,7 @@ export default function FormNuevoUsuario({
     <div className="content">
       <Card className="card-user">
         <CardHeader>
-          <CardTitle tag="h5">Nuevo Usuario</CardTitle>
+          <CardTitle tag="h5">{tituloNombre}</CardTitle>
         </CardHeader>
         <CardBody>
           <Form onSubmit={enviar}>

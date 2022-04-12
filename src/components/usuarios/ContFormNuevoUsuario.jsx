@@ -10,6 +10,7 @@ export default function ContFormNuevoUsuario() {
   return (
     <div>
       <FormNuevoUsuario
+        tituloNombre = "Nuevo Usuario"
         username={username}
         setUsername={setUsername}
         email={email}

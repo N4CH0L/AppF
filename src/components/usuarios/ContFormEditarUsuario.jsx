@@ -11,6 +11,7 @@ export default function ContFormEditarUsuario() {
   return (
     <div>
       <FormNuevoUsuario
+        tituloNombre = "Editar Usuario"
         username={username}
         setUsername={setUsername}
         email={email}

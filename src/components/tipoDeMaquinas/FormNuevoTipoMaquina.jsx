@@ -47,7 +47,7 @@ export default function FormNuevoTipoMaquina({
     <div className="content">
       <Card className="card-user">
         <CardHeader>
-          <CardTitle tag="h5">Nuevo Tipo de Máquina</CardTitle>
+          <CardTitle tag="h5">{tituloNombre}</CardTitle>
         </CardHeader>
         <CardBody>
           <Form onSubmit={enviar}>
