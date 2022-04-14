@@ -15,7 +15,8 @@ export default function FormNuevoTipoMaquina({
   nombre,
   setNombre,
   descripcion,
-  setDescripcion}) {
+  setDescripcion,
+  tituloNombre}) {
   const [error, setError] = useState({})
 
   const enviar = (e) => {

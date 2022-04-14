@@ -9,7 +9,7 @@ export default function ContFormEditarUsuario() {
   const [contrasenia, setContrasenia] = useState('');
 
   return (
-    <div>
+    <div  className="content">
       <FormNuevoUsuario
         tituloNombre = "Editar Usuario"
         username={username}

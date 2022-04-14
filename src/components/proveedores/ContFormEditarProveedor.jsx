@@ -12,7 +12,7 @@ export default function ContFormEditarProveedor() {
   return (
     <div>
       <FormNuevoProveedor
-        tituloNombre = 'Nuevo Proveedor'
+        tituloNombre = 'Editar Proveedor'
         nombre={nombre}
         setNombre={setNombre}
         telefono={telefono}

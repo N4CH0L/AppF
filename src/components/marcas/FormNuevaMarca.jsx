@@ -11,6 +11,7 @@ import {
   Input,
   Row,
   Col,
+  Alert,
 } from "reactstrap";
 
 
@@ -36,8 +37,23 @@ export default function FormNuevaMarca({
       }
       console.log(context)
     }
- 
+
   }
+
+  function alerta() {
+    var mensaje;
+    var opcion = confirm("Clicka en Aceptar o Cancelar");
+    if (opcion == true) {
+      mensaje = "Has clickado OK";
+    } else {
+      mensaje = "Has clickado Cancelar";
+    }
+    document.getElementById("ejemplo").innerHTML = mensaje;
+  }
+
+  
+
+
 
   const validar = () =>{
     setError({})
@@ -76,6 +92,7 @@ export default function FormNuevaMarca({
             <Row>
               <Col className="pr-1" md="6">
                 <FormGroup>
+                 
                   <label htmlFor="Descripcion">Descripción</label> <small> - Opcional</small>
                   <Input
                     id='Descripcion'
@@ -89,7 +106,8 @@ export default function FormNuevaMarca({
             <Row>
               <Col>
                 <input class="btn btn-primary" type="submit" value="nueva" />
-                <input class="btn btn-danger" type="submit" value="Cancelar" />
+                <a className="btn btn-danger" href="/admin/marca">Cancelar</a >
+               
               </Col>
             </Row>
           </Form>

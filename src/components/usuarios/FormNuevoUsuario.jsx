@@ -19,7 +19,8 @@ export default function FormNuevoUsuario({
   email,
   setEmail,
   contrasenia,
-  setContrasenia }) {
+  setContrasenia,
+  tituloNombre }) {
 
   const [error, setError] = useState({})
 

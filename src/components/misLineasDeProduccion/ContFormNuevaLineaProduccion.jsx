@@ -11,7 +11,7 @@ export default function ContFormNuevaLineaProduccion() {
   return (
     <div>
         <FormCrearLineaProducción
-          tituloNombre = 'Editar Linea de Producción'
+          tituloNombre = 'Crear Linea de Producción'
           activo = {activo}
           setActivo = {setActivo}
           nombre ={nombre}

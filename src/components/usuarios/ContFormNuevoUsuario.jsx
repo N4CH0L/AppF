@@ -7,8 +7,9 @@ export default function ContFormNuevoUsuario() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [contrasenia, setContrasenia] = useState('');
+  
   return (
-    <div>
+    <div  className="content">
       <FormNuevoUsuario
         tituloNombre = "Nuevo Usuario"
         username={username}
