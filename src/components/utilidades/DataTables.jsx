@@ -34,8 +34,8 @@ export default function DataTables({ data, columnas, params }) {
     }, [])
     return (
         <Container>
-            <table className="display dataTable table table-striped table-bordered table-hovered" width="100%" ref={tableRef}>
-                <thead className="thead-dark">
+            <table className="display dataTable table table-striped row-border hover" width="100%" ref={tableRef}>
+                <thead className="bg-primary text-light">
                     {columnas}
                 </thead>
                 <tbody>

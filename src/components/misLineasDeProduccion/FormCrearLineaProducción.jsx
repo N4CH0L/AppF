@@ -38,15 +38,18 @@ export default function FormCrearLineaProducción({
   }
 
   const validar = () => {
+    let errors = {}
     setError({})
     if (nombre.length === 0) {
-      setError({ ...error, nombre: 'Este campo es obligatorio' })
+      errors ={ ...errors, nombre: 'Este campo es obligatorio' }
     }
 
-    if (Object.keys(error).length === 0) {
-      return false;
-    } else {
+    if (Object.keys(errors).length === 0) {
+      setError({})
       return true;
+    } else {
+      setError(errors)
+      return false;
     }
 
   }
@@ -57,6 +60,7 @@ export default function FormCrearLineaProducción({
           <CardTitle tag="h5">{tituloNombre}</CardTitle>
         </CardHeader>
         <CardBody>
+        {Object.keys(error).length>0 && <div class="alert alert-danger alert-dismissible show" role="alert"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button><span><b>Error - </b>Algunos campos presentan errores, debe corregirlos primero.</span></div>}
           <Form onSubmit={enviar}>
             <Row>
               <Col className="pr-1" md="6">
@@ -110,12 +114,8 @@ export default function FormCrearLineaProducción({
               </Col>
             </Row>
             <Row>
-              <Col xs="2">
-                <input className="btn btn-primary btn-block" type="submit" value="nueva" />
-              </Col>
-              <Col xs="2">
-                <a href="/" className="btn btn-danger btn-block">Cancelar</a>
-              </Col>
+                <a href="#" onClick={enviar} className="btn btn-primary btn-form"><i className="fa-solid fa-check"></i> Guardar</a>
+                <a href="/" className="btn btn-danger btn-form"><i className="fa-solid fa-ban"></i> Cancelar</a>
             </Row>
           </Form>
         </CardBody>

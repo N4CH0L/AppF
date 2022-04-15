@@ -16,19 +16,18 @@ import {
 
 
 export default function FormNuevaMarca({
-  nombre, 
-  setNombre, 
-  descripcion, 
+  nombre,
+  setNombre,
+  descripcion,
   setDescripcion,
   nombreTitulo,
-  setnombreTitulo}) {
+  setnombreTitulo }) {
 
   const [error, setError] = useState({});
-  
 
-  const enviar = (e) => {
-    e.preventDefault();
-    if (validar()){
+
+  const enviar = () => {
+    if (validar()) {
       var context = {
         nuevaMarca: {
           nombre: nombre,
@@ -40,30 +39,18 @@ export default function FormNuevaMarca({
 
   }
 
-  function alerta() {
-    var mensaje;
-    var opcion = confirm("Clicka en Aceptar o Cancelar");
-    if (opcion == true) {
-      mensaje = "Has clickado OK";
-    } else {
-      mensaje = "Has clickado Cancelar";
-    }
-    document.getElementById("ejemplo").innerHTML = mensaje;
-  }
-
-  
-
-
-
-  const validar = () =>{
+  const validar = () => {
+    let errors = {}
     setError({})
-    if(nombre.length === 0){
-      setError({...error, nombre: 'Este campo es obligatorio'})
+    if (nombre.length === 0) {
+      errors = { ...errors, nombre: 'Este campo es obligatorio' }
     }
-    if (Object.keys(error).length === 0){
-      return false;
-    }else{
+    if (Object.keys(errors).length === 0) {
+      setError({})
       return true;
+    } else {
+      setError(errors)
+      return false;
     }
   }
   return (
@@ -73,6 +60,7 @@ export default function FormNuevaMarca({
           <CardTitle tag="h5">{nombreTitulo}</CardTitle>
         </CardHeader>
         <CardBody>
+          {Object.keys(error).length > 0 && <div class="alert alert-danger alert-dismissible show" role="alert"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button><span><b>Error - </b>Algunos campos presentan errores, debe corregirlos primero.</span></div>}
           <Form onSubmit={enviar}>
             <Row>
               <Col className="pr-1" md="6">
@@ -92,7 +80,7 @@ export default function FormNuevaMarca({
             <Row>
               <Col className="pr-1" md="6">
                 <FormGroup>
-                 
+
                   <label htmlFor="Descripcion">Descripción</label> <small> - Opcional</small>
                   <Input
                     id='Descripcion'
@@ -104,11 +92,8 @@ export default function FormNuevaMarca({
               </Col>
             </Row>
             <Row>
-              <Col>
-                <input class="btn btn-primary" type="submit" value="nueva" />
-                <a className="btn btn-danger" href="/admin/marca">Cancelar</a >
-               
-              </Col>
+              <a href="#" onClick={enviar} className="btn btn-primary btn-form"><i className="fa-solid fa-check"></i> Guardar</a>
+              <a href="/" className="btn btn-danger btn-form"><i className="fa-solid fa-ban"></i> Cancelar</a>
             </Row>
           </Form>
         </CardBody>

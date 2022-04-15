@@ -22,8 +22,7 @@ export default function FormNuevoComponenteFisico({
   tituloNombre }) {
   const [error, setError] = useState({})
 
-  const enviar = (e) => {
-    e.preventDefault();
+  const enviar = () => {
     if (validar()) {
       var context = {
         nuevoComonenteFisico: {
@@ -37,14 +36,17 @@ export default function FormNuevoComponenteFisico({
   }
 
   const validar = () => {
+    let errors = {}
     setError({})
     if (nombre.length === 0) {
-      setError({ ...error, nombre: 'Este campo es obligatorio' })
+      errors = { ...errors, nombre: 'Este campo es obligatorio' }
     }
 
-    if (Object.keys(error).length === 0) {
+    if (Object.keys(errors).length === 0) {
+      setError({})
       return false;
     } else {
+      setError(errors)
       return true;
     }
   }
@@ -55,6 +57,7 @@ export default function FormNuevoComponenteFisico({
           <CardTitle tag="h5">{tituloNombre}</CardTitle>
         </CardHeader>
         <CardBody>
+        {Object.keys(error).length>0 && <div class="alert alert-danger alert-dismissible show" role="alert"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button><span><b>Error - </b>Algunos campos presentan errores, debe corregirlos primero.</span></div>}
           <Form onSubmit={enviar}>
             <Row>
               <Col className="pr-1" md="6">
@@ -112,10 +115,8 @@ export default function FormNuevoComponenteFisico({
               </Row>
             </Card>
             <Row>
-              <Col>
-                <input class="btn btn-primary" type="submit" value="nueva" />
-                <input class="btn btn-danger" type="submit" value="Cancelar" />
-              </Col>
+                <a href="#" onClick={enviar} className="btn btn-primary btn-form"><i className="fa-solid fa-check"></i> Guardar</a>
+                <a href="/" className="btn btn-danger btn-form"><i className="fa-solid fa-ban"></i> Cancelar</a>
             </Row>
           </Form>
         </CardBody>

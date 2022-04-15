@@ -79,6 +79,7 @@ var routes = [
     component: Typography,
     layout: "/admin",
   },
+
   {
     path: "/activo/nuevo",
     name: "Crear Activo",

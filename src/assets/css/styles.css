@@ -19,3 +19,9 @@ code {
   margin: 0 5px !important;
   font-size: 1.2em;
 }
+
+.btn-form {
+  width: 10rem !important;
+  margin-left: 1rem;
+  margin-right: 0;
+}
