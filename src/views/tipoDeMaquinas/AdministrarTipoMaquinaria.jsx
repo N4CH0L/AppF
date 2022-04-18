@@ -10,6 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import TablaTipoMaquinaria from 'components/tipoDeMaquinas/TablaTipoMaquinaria';
 
 export default function AdministrarTipoMaquinaria() {
   return (
@@ -19,32 +20,25 @@ export default function AdministrarTipoMaquinaria() {
           <Card>
             <CardHeader>
               <CardTitle tag="h5">Administrar Tipos de Máquina</CardTitle>
-              <Row>
-                <Col>
-                  <a className="btn btn-primary" href="/tipodemaquina/tipodemaquinas/nuevo">Nuevo</a>
-                </Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <Row>
-                <Col>
-                  <Card className="card-plain">
-                    <CardHeader>
-                      <CardTitle tag="h5">Listado de Tipos de Máquina</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      {/*Crear tabla */}
-                    
-                      <Tabla/>
-                    </CardBody>
-                  </Card>
-                </Col>
-
-              </Row>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </div>
-  )
-}
+              <a className="btn btn-success" href="/tipodemaquina/tipodemaquinas/nuevo"><i class="fa-solid fa-plus"></i> Nuevo</a>
+              </CardHeader>
+              </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card>
+              <CardHeader>
+                <CardTitle tag="h5">Listado de Tipos de Máquinaria</CardTitle>
+  
+              </CardHeader>
+              <CardBody>
+                <TablaTipoMaquinaria />
+              </CardBody>
+            </Card>
+          </Col>
+  
+        </Row>
+      </div>
+    )
+  }

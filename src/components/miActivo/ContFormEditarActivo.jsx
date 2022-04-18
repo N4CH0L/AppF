@@ -2,7 +2,7 @@ import React from 'react'
 import FormCrearActivo from './FormCrearActivo'
 import { useState } from "react";
 
-export default function ContFormEditarActivo() {
+export default function ContFormEditarActivo({id}) {
   //Editar Activo
   const [tag, setTag] = useState('');
   const [nombre, setNombre] = useState('');

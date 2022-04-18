@@ -1,7 +1,7 @@
 import React from 'react'
 import Tabla from '../../components/Tabla/Tabla'
 import {
-  Button,
+
   Card,
   Table,
   CardHeader,
@@ -10,41 +10,35 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import TablaProveedor from 'components/proveedores/TablaProveedor';
 
 export default function AdministrarProveedores() {
   return (
-    <div className="content">
-      <Row>
-        <Col md="12">
-          <Card>
-            <CardHeader>
-              <CardTitle tag="h5">Administrar Proveedores</CardTitle>
-              <Row>
-                <Col>
-                  <a className="btn btn-primary" href="/admin/proveedor/nuevo">Nuevo</a>
-                </Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <Row>
-                <Col>
-                  <Card className="card-plain">
-                    <CardHeader>
-                      <CardTitle tag="h5">Lista de Proveedores</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      {/*Crear tabla */}
-                    
-                      <Tabla/>
-                    </CardBody>
-                  </Card>
-                </Col>
-
-              </Row>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </div>
-  )
-}
+      <div className="content">
+        <Row>
+          <Col md="12">
+            <Card>
+              <CardHeader>
+                <CardTitle tag="h5">Listado de Proveedores</CardTitle>
+                <a className="btn btn-success" href="/admin/proveedor/nuevo"><i class="fa-solid fa-plus"></i> Nueva</a>
+              </CardHeader>
+              </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card>
+              <CardHeader>
+                <CardTitle tag="h5">Listado de Proveedores</CardTitle>
+  
+              </CardHeader>
+              <CardBody>
+                <TablaProveedor />
+              </CardBody>
+            </Card>
+          </Col>
+  
+        </Row>
+      </div>
+    )
+  }

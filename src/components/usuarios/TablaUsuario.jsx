@@ -5,7 +5,7 @@ import { Fragment } from 'react/cjs/react.production.min';
 
 import axios from 'axios';
 
-export default function TablaActivos() {
+export default function TablaUsuario() {
     const [list, setList] = useState(false);
 
     useEffect(() => {
@@ -23,11 +23,10 @@ export default function TablaActivos() {
     const columnas = () => {
         return (
             <tr>
-                <th>Tag</th>
-                <th>Nombre</th>
-                <th>Modelo</th>
-                <th>Nro de Serie</th>
-         
+                <th>Username</th>
+                <th>Email</th>
+                {/**<th>Status</th>*/}
+                <th>Acciones</th>
             </tr>
         )
     }
@@ -41,8 +40,11 @@ export default function TablaActivos() {
                         <tr key={index}>
                             <td>{dato.id}</td>
                             <td>{dato.title}</td>
-                            <td>{dato.body}</td>
-                            <td>{dato.userId}</td>
+                            <td>
+                                <a className='btn btn-primary fa-regular fa-pen no-padding' href='/admin/usuario/editar'></a>
+                                <a className='btn btn-info fa-solid fa-eye no-padding' href="/"></a>
+                               
+                            </td>
                         </tr>
 
                     )
@@ -71,3 +73,5 @@ export default function TablaActivos() {
 
     )
 }
+
+

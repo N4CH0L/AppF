@@ -10,6 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import TablaUsuario from 'components/usuarios/TablaUsuario';
 
 export default function AministrarUsuario() {
   return (
@@ -19,31 +20,24 @@ export default function AministrarUsuario() {
           <Card>
             <CardHeader>
               <CardTitle tag="h5">Administrar Usuarios</CardTitle>
-              <Row>
-                <Col>
-                  <a className="btn btn-primary" href="/admin/usuario/nuevo">Nuevo</a>
-                </Col>
-              </Row>
+              <a className="btn btn-success" href="/admin/usuario/nuevo"><i class="fa-solid fa-plus"></i> Nuevo</a>
             </CardHeader>
-            <CardBody>
-              <Row>
-                <Col>
-                  <Card className="card-plain">
-                    <CardHeader>
-                      <CardTitle tag="h5">Lista de Usuarios</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      {/*Crear tabla */}
-                      
-                      <Tabla/>
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </div>
-  )
-}
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card>
+              <CardHeader>
+                <CardTitle tag="h5">Listado de Usuarios</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <TablaUsuario />
+              </CardBody>
+            </Card>
+          </Col>
+  
+        </Row>
+      </div>
+    )
+  }

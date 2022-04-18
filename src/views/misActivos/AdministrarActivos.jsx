@@ -19,7 +19,7 @@ export default function AdministrarActivos() {
           <Card>
             <CardHeader>
               <CardTitle tag="h5">Administrar Activos</CardTitle>
-              <a className="btn btn-primary" href="/admin/activo/nuevo">Nuevo</a>
+              <a className="btn btn-success" href="/admin/activo/nuevo" > <i class="fa-solid fa-plus"></i> Nuevo</a>
             </CardHeader>
           </Card>
         </Col>

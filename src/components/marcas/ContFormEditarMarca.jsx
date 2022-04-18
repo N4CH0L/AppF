@@ -7,6 +7,7 @@ export default function ContFormEditarMarca() {
   const [nombre, setNombre] = useState('');
   const [descripcion, setDescripcion] = useState('');
   
+  setDescripcion("Hola")
   return (
     <div>
         <FormNuevaMarca

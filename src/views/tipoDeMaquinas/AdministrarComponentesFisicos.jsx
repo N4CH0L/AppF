@@ -10,6 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import TablaComponenteFisico from 'components/tipoDeMaquinas/TablaComponenteFisico';
 
 export default function AdministrarComponentesFisicos() {
   return (
@@ -20,33 +21,25 @@ export default function AdministrarComponentesFisicos() {
           <Card>
             <CardHeader>
               <CardTitle tag="h5">Administrar Componentes Físicos</CardTitle>
-              <Row>
-                <Col>
-                  <a className="btn btn-primary" href="/admin/tipodemaquinas/nuevo">Nuevo</a>
-                </Col>
-              </Row>
+              <a className="btn btn-success" href="/admin/tipodemaquinas/nuevo"><i class="fa-solid fa-plus"></i> Nuevo</a>
             </CardHeader>
-            <CardBody>
-              <Row>
-                <Col>
-                  <Card className="card-plain">
-                    <CardHeader>
-                      <CardTitle tag="h5">Listado de Componentes Físicos</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      {/*Crear tabla */}
-                      
-                      <Tabla/>
-                    </CardBody>
-                  </Card>
-                </Col>
-
-              </Row>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-
-    </div>
-  )
-}
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card>
+              <CardHeader>
+                <CardTitle tag="h5">Listado de Componentes Físicos</CardTitle>
+  
+              </CardHeader>
+              <CardBody>
+                <TablaComponenteFisico />
+              </CardBody>
+            </Card>
+          </Col>
+  
+        </Row>
+      </div>
+    )
+  }

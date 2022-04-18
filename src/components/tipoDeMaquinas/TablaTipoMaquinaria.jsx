@@ -5,7 +5,7 @@ import { Fragment } from 'react/cjs/react.production.min';
 
 import axios from 'axios';
 
-export default function TablaActivos() {
+export default function TablaTipoMaquinaria() {
     const [list, setList] = useState(false);
 
     useEffect(() => {
@@ -23,11 +23,9 @@ export default function TablaActivos() {
     const columnas = () => {
         return (
             <tr>
-                <th>Tag</th>
                 <th>Nombre</th>
-                <th>Modelo</th>
-                <th>Nro de Serie</th>
-         
+                <th>Descripción</th>
+                <th>Acciones</th>
             </tr>
         )
     }
@@ -41,8 +39,10 @@ export default function TablaActivos() {
                         <tr key={index}>
                             <td>{dato.id}</td>
                             <td>{dato.title}</td>
-                            <td>{dato.body}</td>
-                            <td>{dato.userId}</td>
+                            <td>
+                                <a className='btn btn-primary fa-regular fa-pen no-padding' href='/tipodemaquina/tipodemaquinas/editar'></a>
+                                <a className='btn btn-danger fa-regular fa-trash no-padding' href="/"></a>
+                            </td>
                         </tr>
 
                     )
@@ -71,3 +71,5 @@ export default function TablaActivos() {
 
     )
 }
+
+

@@ -10,6 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import TablaLineaProduccion from 'components/misLineasDeProduccion/TablaLineaProduccion';
 
 export default function AdministrarLineasProduccion() {
   return (
@@ -18,31 +19,25 @@ export default function AdministrarLineasProduccion() {
         <Col md="12">
           <Card>
             <CardHeader>
-              <CardTitle tag="h5">Administracion de Lineas de Producción</CardTitle>
-              <Row>
-                <Col>
-                  <a className="btn btn-primary" href="/admin/lineadeproduccion/nueva">Nuevo</a>
-                </Col>
-              </Row>
+              <CardTitle tag="h5">Administrar Lineas de Producción</CardTitle>
+              <a className="btn btn-success" href="/admin/lineadeproduccion/nueva"><i class="fa-solid fa-plus"></i> Nueva</a>
+            </CardHeader>
+            </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Card>
+            <CardHeader>
+              <CardTitle tag="h5">Listado de Lineas de Producción</CardTitle>
+
             </CardHeader>
             <CardBody>
-              <Row>
-                <Col>
-                  <Card className="card-plain">
-                    <CardHeader>
-                      <CardTitle tag="h5">Listado de lineas de produccións</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      {/*Crear tabla */}
-                      <Tabla/>
-                    </CardBody>
-                  </Card>
-                </Col>
-
-              </Row>
+              <TablaLineaProduccion />
             </CardBody>
           </Card>
         </Col>
+
       </Row>
     </div>
   )
