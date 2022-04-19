@@ -9,7 +9,7 @@ import "assets/demo/demo.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.js";
-
+ 
 
 ReactDOM.render(
   <BrowserRouter>
