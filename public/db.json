@@ -1,0 +1,18 @@
+{
+    "usuario":[
+        {
+            "id": 1,
+            "apellido": "Leuca",
+            "nombre":"Ignacio",
+            "username": "leuka",
+            "password":"81dc9bdb52d04dc20036dbd8313ed055"
+        },
+        {
+            "id": 2,
+            "apellido": "Villasuso",
+            "nombre":"Emanuel",
+            "username": "EVillasuso",
+            "password":"827ccb0eea8a706c4c34a16891f84e7b"
+        }
+    ]
+}
