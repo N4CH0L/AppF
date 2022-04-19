@@ -29,17 +29,21 @@ export default function FormLogIn() {
   }
   return (
     <div className="content">
-      <Card className="card-user">
+      <Card className="card-user card text-center">
         <CardHeader>
           <CardTitle tag="h5">Por favor inicie sesión</CardTitle>
         </CardHeader>
         <CardBody>
           <Form onSubmit={enviar}>
+          <Row>
+            
+          </Row>
             <Row>
               <Col className="pr-1" md="6">
                 <FormGroup>
                   <label htmlFor="UserName">Username</label>
                   <Input
+
                     id='UserName'
                     type="text"
                     value={userName}
@@ -69,6 +73,15 @@ export default function FormLogIn() {
           </Form>
         </CardBody>
       </Card>
+
+      <div class="form-row">
+        <div class="input-group input-group-lg col-md-3 mx-auto">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Your Amount" aria-describedby="basic-addon1"/>
+        </div>
+    </div>
 
     </div>
   )
