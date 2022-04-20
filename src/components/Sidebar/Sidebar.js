@@ -18,7 +18,7 @@
 */
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Nav } from "reactstrap";
+import { Nav, NavItem } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
@@ -69,10 +69,11 @@ function Sidebar(props) {
       </div>
       <div className="sidebar-wrapper" ref={sidebar}>
         <Nav>
+          <NavItem>
           {props.routes.map((prop, key) => {
             return (
-              <li
-                className={
+              <ol 
+                className= {
                   activeRoute(prop.path) + (prop.pro ? " active-pro" : "")
                 }
                 key={key}
@@ -83,11 +84,14 @@ function Sidebar(props) {
                   activeClassName="active"
                 >
                   <i className={prop.icon} />
-                  <p>{prop.name}</p>
+                  <p className="text-warning mt-0 mb-0">{prop.name}</p>
+                  
+                  
                 </NavLink>
-              </li>
+              </ol>
             );
           })}
+          </NavItem>
         </Nav>
       </div>
     </div>

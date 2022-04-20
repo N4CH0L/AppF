@@ -20,7 +20,7 @@ export default function TablaUsuario() {
             });
     }, [setList]);
 
-    const columnas = () => {
+    const columnas =  () => {
         return (
             <tr>
                 <th>Username</th>
